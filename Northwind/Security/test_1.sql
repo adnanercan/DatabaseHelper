@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [test]
+    WITH PASSWORD = N'i2zlitlorvelImrb`zyzFb{xmsFT7_&#$!~<qfs=r9wdqiot', SID = 0xF5DC2BB7DB3087438E536C03B55CBD16, DEFAULT_DATABASE = [Northwind], DEFAULT_LANGUAGE = [us_english], CHECK_POLICY = OFF;
+

@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [BK-L104-PC55\AliVeli]
+    FROM WINDOWS WITH DEFAULT_LANGUAGE = [us_english];
+
