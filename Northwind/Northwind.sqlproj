@@ -139,5 +139,6 @@
     <Build Include="dbo\Stored Procedures\CustOrdersOrders.sql" />
     <Build Include="dbo\Stored Procedures\SalesByCategory.sql" />
     <Build Include="dbo\Tables\ProductImages.sql" />
+    <Build Include="dbo\Tables\Basket.sql" />
   </ItemGroup>
 </Project>
