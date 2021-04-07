@@ -153,6 +153,7 @@ namespace SqlHelper
             this.listBoxDb.Name = "listBoxDb";
             this.listBoxDb.Size = new System.Drawing.Size(267, 303);
             this.listBoxDb.TabIndex = 0;
+            this.listBoxDb.SelectedIndexChanged += new System.EventHandler(this.listBoxDb_SelectedIndexChanged);
             // 
             // groupBox3
             // 

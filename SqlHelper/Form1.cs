@@ -42,10 +42,28 @@ namespace SqlHelper
 
         private void button2_Click(object sender, EventArgs e)
         {
+            listBoxDb.Items.Clear();
             foreach (var item in server.Databases)
             {
                 listBoxDb.Items.Add(item.ToString());
             }
+        }
+
+        private void listBoxDb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int dbname = listBoxDb.SelectedIndex;
+           
+
+            DatabaseCollection dbs = server.Databases;
+            Database db = dbs[dbname];
+
+            TableCollection tables = db.Tables;
+            listBoxTbl.Items.Clear();
+            foreach (var item in tables)
+            {
+                listBoxTbl.Items.Add(item.ToString());
+            }
+
         }
     }
 }
