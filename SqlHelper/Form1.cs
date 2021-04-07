@@ -14,7 +14,8 @@ namespace SqlHelper
 {
     public partial class Form1 : Form
     {
-        ServerConnection server;
+        Server server;
+        ServerConnection sqlconnection;
         public Form1()
         {
             InitializeComponent();
@@ -24,8 +25,9 @@ namespace SqlHelper
         {
             try
             {
-                server = new ServerConnection(txtServer.Text, txtUserName.Text, txtPasword.Text);
+                sqlconnection = new ServerConnection(txtServer.Text, txtUserName.Text, txtPasword.Text);
 
+                server = new Server(sqlconnection);
                 MessageBox.Show(server.ServerVersion.ToString());
                 button2.Enabled = true;
             }
@@ -40,7 +42,10 @@ namespace SqlHelper
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
+            foreach (var item in server.Databases)
+            {
+                listBoxDb.Items.Add(item.ToString());
+            }
         }
     }
 }
