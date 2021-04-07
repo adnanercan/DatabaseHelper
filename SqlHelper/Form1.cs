@@ -25,6 +25,8 @@ namespace SqlHelper
         {
             try
             {
+
+                // Server Nesnesi ServerConnection istediginden bu nesne olusturuldu.
                 sqlconnection = new ServerConnection(txtServer.Text, txtUserName.Text, txtPasword.Text);
 
                 server = new Server(sqlconnection);
@@ -56,12 +58,30 @@ namespace SqlHelper
 
             DatabaseCollection dbs = server.Databases;
             Database db = dbs[dbname];
-
+            
             TableCollection tables = db.Tables;
             listBoxTbl.Items.Clear();
             foreach (var item in tables)
             {
                 listBoxTbl.Items.Add(item.ToString());
+            }
+
+        }
+
+        private void listBoxTbl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int dbname = listBoxDb.SelectedIndex;
+
+
+            DatabaseCollection dbs = server.Databases;
+            Database db = dbs[dbname];
+
+            TableCollection tables = db.Tables;
+            ColumnCollection columns = tables[listBoxTbl.SelectedIndex].Columns;
+            listBoxFields.Items.Clear();
+            foreach (var item in columns)
+            {
+                listBoxFields.Items.Add(item.ToString());
             }
 
         }

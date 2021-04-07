@@ -42,9 +42,12 @@ namespace SqlHelper
             this.listBoxDb = new System.Windows.Forms.ListBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.listBoxTbl = new System.Windows.Forms.ListBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.listBoxFields = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtServer
@@ -66,14 +69,14 @@ namespace SqlHelper
             this.groupBox1.Controls.Add(this.txtServer);
             this.groupBox1.Location = new System.Drawing.Point(32, 24);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(787, 79);
+            this.groupBox1.Size = new System.Drawing.Size(591, 79);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "SqlServer Connection";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(678, 21);
+            this.button1.Location = new System.Drawing.Point(523, 30);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(55, 23);
             this.button1.TabIndex = 6;
@@ -130,7 +133,7 @@ namespace SqlHelper
             this.groupBox2.Controls.Add(this.listBoxDb);
             this.groupBox2.Location = new System.Drawing.Point(32, 125);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(289, 373);
+            this.groupBox2.Size = new System.Drawing.Size(198, 373);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Databases";
@@ -140,7 +143,7 @@ namespace SqlHelper
             this.button2.Enabled = false;
             this.button2.Location = new System.Drawing.Point(16, 29);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(267, 23);
+            this.button2.Size = new System.Drawing.Size(167, 23);
             this.button2.TabIndex = 1;
             this.button2.Text = "Get Databases";
             this.button2.UseVisualStyleBackColor = true;
@@ -151,16 +154,16 @@ namespace SqlHelper
             this.listBoxDb.FormattingEnabled = true;
             this.listBoxDb.Location = new System.Drawing.Point(16, 62);
             this.listBoxDb.Name = "listBoxDb";
-            this.listBoxDb.Size = new System.Drawing.Size(267, 303);
+            this.listBoxDb.Size = new System.Drawing.Size(167, 303);
             this.listBoxDb.TabIndex = 0;
             this.listBoxDb.SelectedIndexChanged += new System.EventHandler(this.listBoxDb_SelectedIndexChanged);
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.listBoxTbl);
-            this.groupBox3.Location = new System.Drawing.Point(336, 125);
+            this.groupBox3.Location = new System.Drawing.Point(245, 127);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(289, 373);
+            this.groupBox3.Size = new System.Drawing.Size(188, 373);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Tables";
@@ -170,14 +173,34 @@ namespace SqlHelper
             this.listBoxTbl.FormattingEnabled = true;
             this.listBoxTbl.Location = new System.Drawing.Point(16, 23);
             this.listBoxTbl.Name = "listBoxTbl";
-            this.listBoxTbl.Size = new System.Drawing.Size(267, 342);
+            this.listBoxTbl.Size = new System.Drawing.Size(159, 342);
             this.listBoxTbl.TabIndex = 0;
+            this.listBoxTbl.SelectedIndexChanged += new System.EventHandler(this.listBoxTbl_SelectedIndexChanged);
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.listBoxFields);
+            this.groupBox4.Location = new System.Drawing.Point(439, 127);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(171, 373);
+            this.groupBox4.TabIndex = 4;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Fields";
+            // 
+            // listBoxFields
+            // 
+            this.listBoxFields.FormattingEnabled = true;
+            this.listBoxFields.Location = new System.Drawing.Point(16, 23);
+            this.listBoxFields.Name = "listBoxFields";
+            this.listBoxFields.Size = new System.Drawing.Size(145, 342);
+            this.listBoxFields.TabIndex = 0;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(831, 764);
+            this.ClientSize = new System.Drawing.Size(653, 764);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -187,6 +210,7 @@ namespace SqlHelper
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -206,6 +230,8 @@ namespace SqlHelper
         private System.Windows.Forms.ListBox listBoxDb;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.ListBox listBoxTbl;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.ListBox listBoxFields;
     }
 }
 
