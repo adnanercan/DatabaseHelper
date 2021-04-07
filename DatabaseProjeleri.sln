@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.31129.286
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Northwind", "Northwind\Northwind.sqlproj", "{25F993AA-C6E1-49F5-9D44-9C80AA7C71C0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlHelper", "SqlHelper\SqlHelper.csproj", "{6B965AA3-DCE2-4658-9680-DF01F48B4296}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +19,10 @@ Global
 		{25F993AA-C6E1-49F5-9D44-9C80AA7C71C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{25F993AA-C6E1-49F5-9D44-9C80AA7C71C0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{25F993AA-C6E1-49F5-9D44-9C80AA7C71C0}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{6B965AA3-DCE2-4658-9680-DF01F48B4296}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B965AA3-DCE2-4658-9680-DF01F48B4296}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B965AA3-DCE2-4658-9680-DF01F48B4296}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B965AA3-DCE2-4658-9680-DF01F48B4296}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
