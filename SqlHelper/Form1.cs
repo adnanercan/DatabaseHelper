@@ -25,12 +25,10 @@ namespace SqlHelper
         {
             try
             {
+                SqlHelper server = new SqlHelper(txtServer.Text, txtUserName.Text, txtPasword.Text);
 
-                // Server Nesnesi ServerConnection istediginden bu nesne olusturuldu.
-                sqlconnection = new ServerConnection(txtServer.Text, txtUserName.Text, txtPasword.Text);
-
-                server = new Server(sqlconnection);
-                MessageBox.Show(server.ServerVersion.ToString());
+               
+                MessageBox.Show(server.GetServerVersion());
                 button2.Enabled = true;
             }
             catch (Exception ex)
