@@ -89,13 +89,5 @@ namespace SqlHelper
 
    
     
-    public enum StoredProcedureType
-    { 
-        Get,
-        GetList,
-        Insert,
-        Update,
-        Delete
-
-    }
+    
 }
