@@ -25,10 +25,11 @@ namespace SqlHelper
         {
             try
             {
+               
                 server = new SqlHelper(txtServer.Text, txtUserName.Text, txtPasword.Text);
 
                
-                MessageBox.Show(server.GetServerVersion());
+               // MessageBox.Show(server.GetServerVersion());
                 button2.Enabled = true;
             }
             catch (Exception ex)
@@ -76,6 +77,7 @@ namespace SqlHelper
 
             TableCollection tables = db.Tables;
             ColumnCollection columns = tables[listBoxTbl.SelectedIndex].Columns;
+            
             listBoxFields.Items.Clear();
             foreach (var item in columns)
             {

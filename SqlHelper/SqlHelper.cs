@@ -7,19 +7,28 @@ using Microsoft.SqlServer.Management.Smo;
 using Microsoft.SqlServer.Management.Common;
 namespace SqlHelper
 {
+
+    /// <summary>
+    /// Sql Server a Baglanip Stored Procedure cikaran alt yapi
+    /// </summary>
     public struct SqlHelper
     {
-        string _domain;
+        string _domain; 
         string _username;
         string _password;
         Server _server; // Sql SMO Kutuphanesindeki Class
         /*
          Sql SMO Kutuphanesindeki Class . Server Nesnesi olusturmak icin gerekli olan nesne
          */
-        ServerConnection _serverconnection; 
+        ServerConnection _serverconnection;
+       
 
-
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="domain">Sql Server icin gerekli instance</param>
+        /// <param name="username">Sql Server Username</param>
+        /// <param name="password">Password</param>
         public SqlHelper(string domain,string username,string password)
         {
             _domain = domain;
@@ -35,11 +44,14 @@ namespace SqlHelper
         }
         public DatabaseCollection GetDatabases()
         {
+            
             return _server.Databases;
         }
 
         public TableCollection GetTables(string dbname)
         {
+            
+
             return _server.Databases[dbname].Tables;
         }
 
