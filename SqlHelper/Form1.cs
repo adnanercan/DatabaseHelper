@@ -14,8 +14,8 @@ namespace SqlHelper
 {
     public partial class Form1 : Form
     {
-        Server server;
-        ServerConnection sqlconnection;
+        SqlHelper server;
+        //ServerConnection sqlconnection;
         public Form1()
         {
             InitializeComponent();
@@ -25,7 +25,7 @@ namespace SqlHelper
         {
             try
             {
-                SqlHelper server = new SqlHelper(txtServer.Text, txtUserName.Text, txtPasword.Text);
+                server = new SqlHelper(txtServer.Text, txtUserName.Text, txtPasword.Text);
 
                
                 MessageBox.Show(server.GetServerVersion());
@@ -43,7 +43,7 @@ namespace SqlHelper
         private void button2_Click(object sender, EventArgs e)
         {
             listBoxDb.Items.Clear();
-            foreach (var item in server.Databases)
+            foreach (var item in server.GetDatabases())
             {
                 listBoxDb.Items.Add(item.ToString());
             }
@@ -54,7 +54,7 @@ namespace SqlHelper
             int dbname = listBoxDb.SelectedIndex;
            
 
-            DatabaseCollection dbs = server.Databases;
+            DatabaseCollection dbs = server.GetDatabases();
             Database db = dbs[dbname];
             
             TableCollection tables = db.Tables;
@@ -71,7 +71,7 @@ namespace SqlHelper
             int dbname = listBoxDb.SelectedIndex;
 
 
-            DatabaseCollection dbs = server.Databases;
+            DatabaseCollection dbs = server.GetDatabases();
             Database db = dbs[dbname];
 
             TableCollection tables = db.Tables;

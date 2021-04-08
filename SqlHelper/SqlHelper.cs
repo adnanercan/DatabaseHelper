@@ -12,9 +12,13 @@ namespace SqlHelper
         string _domain;
         string _username;
         string _password;
-        Server _server;
-        ServerConnection _serverconnection;
-        
+        Server _server; // Sql SMO Kutuphanesindeki Class
+        /*
+         Sql SMO Kutuphanesindeki Class . Server Nesnesi olusturmak icin gerekli olan nesne
+         */
+        ServerConnection _serverconnection; 
+
+
 
         public SqlHelper(string domain,string username,string password)
         {
@@ -79,6 +83,19 @@ namespace SqlHelper
 
         }
         
+
+    }
+
+
+   
+    
+    public enum StoredProcedureType
+    { 
+        Get,
+        GetList,
+        Insert,
+        Update,
+        Delete
 
     }
 }
