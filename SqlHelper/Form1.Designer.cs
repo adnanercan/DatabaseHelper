@@ -44,6 +44,8 @@ namespace SqlHelper
             this.listBoxTbl = new System.Windows.Forms.ListBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.listBoxFields = new System.Windows.Forms.ListBox();
+            this.txtStoredProcedure = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -195,11 +197,31 @@ namespace SqlHelper
             this.listBoxFields.Size = new System.Drawing.Size(145, 342);
             this.listBoxFields.TabIndex = 0;
             // 
+            // txtStoredProcedure
+            // 
+            this.txtStoredProcedure.Location = new System.Drawing.Point(32, 544);
+            this.txtStoredProcedure.Multiline = true;
+            this.txtStoredProcedure.Name = "txtStoredProcedure";
+            this.txtStoredProcedure.Size = new System.Drawing.Size(578, 291);
+            this.txtStoredProcedure.TabIndex = 5;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(32, 505);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(578, 33);
+            this.button3.TabIndex = 6;
+            this.button3.Text = "Stored Procedure  Olustur";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(653, 764);
+            this.ClientSize = new System.Drawing.Size(653, 817);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.txtStoredProcedure);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -212,6 +234,7 @@ namespace SqlHelper
             this.groupBox3.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -232,6 +255,8 @@ namespace SqlHelper
         private System.Windows.Forms.ListBox listBoxTbl;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.ListBox listBoxFields;
+        private System.Windows.Forms.TextBox txtStoredProcedure;
+        private System.Windows.Forms.Button button3;
     }
 }
 

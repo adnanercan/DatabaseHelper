@@ -83,5 +83,38 @@ namespace SqlHelper
             }
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            int dbname = listBoxDb.SelectedIndex;
+            string table = listBoxTbl.SelectedItem.ToString();
+            SpGenerate spGenerate = new SpGenerate();
+
+            DatabaseCollection dbs = server.GetDatabases();
+            Database db = dbs[dbname];
+
+            TableCollection tables = db.Tables;
+            ColumnCollection columns = tables[listBoxTbl.SelectedIndex].Columns;
+
+            List<string> spList = spGenerate.GenerateAllSp(columns, table);
+
+            Server s = server.GetServer();
+            foreach (var item in spList)
+            {
+                StoredProcedure sp = new StoredProcedure();
+                
+                //db.StoredProcedures.Add();
+                txtStoredProcedure.Text += item;
+                txtStoredProcedure.Text += " ";
+
+            }
+
+
+            /*
+             
+             List<tip> : Verilen Tipte sinamik Liste olusturur.
+             string[] splist = new string[10];
+             */
+        }
     }
 }

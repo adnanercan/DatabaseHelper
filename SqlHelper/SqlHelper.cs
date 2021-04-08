@@ -29,7 +29,10 @@ namespace SqlHelper
             _serverconnection = new ServerConnection(domain, username, password);
             _server = new Server(_serverconnection);
         }
-
+        public Server GetServer()
+        {
+            return _server;
+        }
         public DatabaseCollection GetDatabases()
         {
             return _server.Databases;
