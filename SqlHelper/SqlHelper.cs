@@ -97,7 +97,16 @@ namespace SqlHelper
             _server = new Server(_serverconnection);
 
         }
-        
+
+        public void AddStoredProcedure(Database db)
+        {
+            db.ExecuteNonQuery("");
+            StoredProcedure sp = new StoredProcedure();
+            
+            
+
+
+        }
 
     }
 

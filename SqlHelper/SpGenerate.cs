@@ -233,5 +233,16 @@ namespace SqlHelper
 
             return allSpList;
         }
+
+        public void AddCrudSp(Database db,string tableName,ColumnCollection columns)
+        {
+            foreach (var spType in Enum.GetValues(typeof(StoredProcedureTypes)))
+            {
+
+                string sql = Generate((StoredProcedureTypes) spType, columns, tableName);
+                db.ExecuteNonQuery(sql);
+            }
+
+        }
     }
 }

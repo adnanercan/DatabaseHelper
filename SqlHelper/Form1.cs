@@ -28,8 +28,8 @@ namespace SqlHelper
                
                 server = new SqlHelper(txtServer.Text, txtUserName.Text, txtPasword.Text);
 
-               
-               // MessageBox.Show(server.GetServerVersion());
+
+                lblVersion.Text = server.GetServerVersion();
                 button2.Enabled = true;
             }
             catch (Exception ex)
@@ -117,6 +117,21 @@ namespace SqlHelper
              List<tip> : Verilen Tipte sinamik Liste olusturur.
              string[] splist = new string[10];
              */
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            int dbname = listBoxDb.SelectedIndex;
+            string table = listBoxTbl.SelectedItem.ToString();
+            SpGenerate spGenerate = new SpGenerate();
+
+            DatabaseCollection dbs = server.GetDatabases();
+            Database db = dbs[dbname];
+
+            TableCollection tables = db.Tables;
+            ColumnCollection columns = tables[listBoxTbl.SelectedIndex].Columns;
+
+            spGenerate.AddCrudSp(db,"Shippers",columns);
         }
     }
 }
